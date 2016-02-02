@@ -35,6 +35,7 @@
           effect,
           canvas,
           context,
+          img_url,
           count=1;
 
       init();
@@ -94,14 +95,21 @@
           var piImage = new Image();
 
           piImage.onload = function() {
-            console.log('Drawing image');
-            context.drawImage(piImage, 0, 0, canvas.width, canvas.height);
+            img_url = "http://192.168.1.2/piv/img_stream/img_"+count+".jpg";
 
-            texture.needsUpdate = true;
+            if (imageExists(img_url)){
+  
+              console.log('Drawing image');
+              context.drawImage(piImage, 0, 0, canvas.width, canvas.height);
+
+              texture.needsUpdate = true;
+            
+            
+
+            piImage.src = img_url;
+            count=count+1;
           }
-
-          piImage.src = "http://192.168.1.2/piv/img_stream/img_"+count+".jpg";
-          count=count+1;
+          }
         }
         setTimeout(animate,10);
         //requestAnimationFrame(animate);
