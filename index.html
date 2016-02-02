@@ -34,7 +34,8 @@
           container,
           effect,
           canvas,
-          context;
+          context,
+          count=1;
 
       init();
 
@@ -78,6 +79,15 @@
 
         animate();
       }
+     function imageExists(image_url){
+
+        var http = new XMLHttpRequest();
+
+        http.open('HEAD', image_url, false);
+        http.send();
+
+        return http.status != 404;
+      }
 
       function animate() {
         if (context) {
@@ -90,10 +100,11 @@
             texture.needsUpdate = true;
           }
 
-          piImage.src = "http://192.168.0.12/picam/cam_pic.php?time=" + new Date().getTime();
+          piImage.src = "http://192.168.1.2/piv/img_stream/img_"+count+".jpg";
+          count=count+1;
         }
-
-        requestAnimationFrame(animate);
+        setTimeout(animate,10);
+        //requestAnimationFrame(animate);
 
         update();
         render();
