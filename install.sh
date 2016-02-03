@@ -10,8 +10,8 @@ php -r 'echo "\n\nYour PHP installation is working fine.\n\n\n";'
 
 mkdir -p /var/www/html/vrstream/tmp
 cp -r js index.html cam_pic.php /var/www/html/vrstream
-chmod +x start_stream.sh
-cp start_stream.sh /usr/local/bin/start_stream
+chmod +x stream/start_stream.sh
+cp stream/start_stream.sh /usr/local/bin/start_stream
 service apache2 restart
 
 echo "\n------------------------------------------------------------------\n"
