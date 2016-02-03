@@ -13,7 +13,7 @@ Installation
  
 Usage
 --------------
- - From command line, type this: `start_stream
+ - From command line, type this: `start_stream`
  - Check your system ip address by typing `ifconfig` and connect your phone to the same router
  - Go to Chrome browser from phone and type : `http://<IP>/vrstream`
   
