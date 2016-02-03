@@ -27,4 +27,4 @@ Usage
 
 
 
-Derived from the work on patick at http://www.patrickcatanzariti.com
+Derived from the work of patick at http://www.patrickcatanzariti.com
