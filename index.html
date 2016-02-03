@@ -34,9 +34,7 @@
           container,
           effect,
           canvas,
-          context,
-          img_url,
-          count=1;
+          context;
 
       init();
 
@@ -80,39 +78,25 @@
 
         animate();
       }
-     function imageExists(image_url){
-
-        var http = new XMLHttpRequest();
-
-        http.open('HEAD', image_url, false);
-        http.send();
-
-        return http.status != 404;
-      }
 
       function animate() {
         if (context) {
           var piImage = new Image();
+          //piImage.crossOrigin = "anonymous";
 
           piImage.onload = function() {
-            img_url = "http://192.168.1.2/piv/img_stream/img_"+count+".jpg";
+            console.log('Drawing image');
+            context.drawImage(piImage, 0, 0, canvas.width, canvas.height);            
 
-            if (imageExists(img_url)){
-  
-              console.log('Drawing image');
-              context.drawImage(piImage, 0, 0, canvas.width, canvas.height);
-
-              texture.needsUpdate = true;
-            
-            
-
-            piImage.src = img_url;
-            count=count+1;
+            texture.needsUpdate = true;
           }
-          }
+
+          piImage.src = "./cam_pic.php?time="+new Date().getTime();
+          
+
         }
-        setTimeout(animate,10);
-        //requestAnimationFrame(animate);
+
+        requestAnimationFrame(animate);
 
         update();
         render();

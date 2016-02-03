@@ -8,6 +8,6 @@
       $preview_delay = 10000;
    }
    usleep($preview_delay);
-   readfile("./output.jpg");
+   readfile("./tmp/output.jpg");
 
 ?>
