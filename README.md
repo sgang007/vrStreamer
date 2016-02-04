@@ -1,6 +1,6 @@
 VR Streamer
 ===========
-Stream webcam into Google Cardboard and watch in VR.
+Stream picamera or webcam into Google Cardboard and watch in VR.
 
 Install ffmpeg on RaspberrPi as given in this link: [FFMPEG for Pi](http://www.jeffreythompson.org/blog/2014/11/13/installing-ffmpeg-for-raspberry-pi/)
 
