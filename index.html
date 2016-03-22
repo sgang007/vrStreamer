@@ -22,7 +22,7 @@
   <body>
     <div id="webglviewer"></div>
     <canvas id="tempCanvas"></canvas>
-
+    <!--<script type="text/javascript" src="/webiopi.js"></script>-->
     <script src="./js/three.min.js"></script>
     <script src="./js/StereoEffect.js"></script>
 
@@ -68,6 +68,12 @@
               console.log('Roll : %f',evt.alpha)
               console.log('Yaw : %f',evt.beta)
               console.log('Pitch : %f',evt.gamma)
+              
+              // webiopi().ready(function(){
+              //webiopi().callMacro("pan_tilt_script.py",[evt.alpha,evt.beta]);
+              //webiopi.refreshGPIO(true);
+              //})
+            
             
           }.bind(this));
         context = canvas.getContext('2d');
