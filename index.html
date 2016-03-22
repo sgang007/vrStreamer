@@ -62,7 +62,14 @@
         function nextPowerOf2(x) { 
             return Math.pow(2, Math.ceil(Math.log(x) / Math.log(2)));
         }
-
+        if (window.DeviceOrientationEvent) {
+          window.addEventListener('deviceorientation', function(evt) {
+            //TODO: Add functions for Servo Control through GPIO
+              console.log('Roll : %f',evt.alpha)
+              console.log('Yaw : %f',evt.beta)
+              console.log('Pitch : %f',evt.gamma)
+            
+          }.bind(this));
         context = canvas.getContext('2d');
         texture = new THREE.Texture(canvas);
         texture.context = context;
